@@ -1,0 +1,72 @@
+SQLite
+
+SQLite is an open source, public domain, serverless, transactional,
+and popular database engine.
+Already installed on most OS X or Linux systems.
+
+TO CHECK TO SEE IF INSTALLE
+sqlite3 -version      check if installed
+
+TO START USING SQLITE EDITOR
+sqlite3
+      sqlite> prompt
+         ...> is continuing a statement
+
+TO SEE A LIST OF COMMANDS
+.help
+
+.likethis     sqlite commands start
+LIKETHIS      SQL commands to modify/inspect db
+
+CREATE A TABLE
+sqlite> CREATE TABLE tablename (
+   ...> id INTEGER PRIMARY KEY,
+   ...> title TEXT,
+   ...> body TEXT
+   ...> );
+sqlite>
+
+DISPLAY TABLE NAMES
+sqlite> tables             returns table names
+
+TO DISPLAY TABLE AND COLUMN DEFINITIONS
+sqlite> .schema tablename  returns the create table definition
+
+TO INSERT VALUES INTO DATABASE
+sqlite> INSERT INTO tablename VALUES (
+   ...> second_column-data,
+   ...> third-column-data
+   ...> );
+
+An unique index number is automatically assigned to the new row
+
+TO DISPLAY ALL DATA FROM A TABLE
+sqlite> SELECT * FROM tablename;         to see all data in table
+sqlite> .headers on                      to display column headers
+sqlite> .mode column
+
+TO USE FOREIGN KEYS
+sqlite> PRAGMA foreign_keys = ON         pragma directive to process input
+
+TO CREATE A TABLE WITH A FOREIGN KEY
+sqlite> CREATE TABLE tablename(
+   ...> id INTEGER PRIMARY KEY,
+   ...> body TEXT,
+   ...> tablename2_id INTEGER NOT NULL,
+   ...> FOREIGN KEY(tablename2_id) REFERENCES tablename2(id)
+   ...> );
+
+TO ADD DATA TO TABLE WITH FOREIGN KEY
+sqlite> INSERT INTO tablename (col1, col2) VALUES (value1, value2);
+note...must include proper foreign key
+
+TO DISPLAY A ROW
+sqlite> SELECT * FROM tablename WHERE tablename_id = value;
+
+TO SAVE A DATABASE
+sqlite> .save database_name
+
+TO OPEN A DATABASE
+> sqlite3 database_name
+
+

@@ -1,1 +1,1 @@
-### Databases used to study SQL, relational databases and ORMs
+### These files were used to learn about databases, SQL, and ORMs.
